@@ -3,14 +3,7 @@ var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
 var phrases = [
-  'I love to sing because it\'s fun',
-  'where are you going',
-  'can I call you tomorrow',
-  'why did you talk while I was talking',
-  'she enjoys reading books and playing games',
-  'where are you going',
-  'have a great day',
-  'she sells seashells on the seashore'
+ 'paracetamol','clopidogrel','ciprofloxacin','cefuroxime','cefixime','liquid paraffin'
 ];
 
 var phrasePara = document.querySelector('.phrase');
