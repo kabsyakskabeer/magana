@@ -1,3 +1,5 @@
+const synth = window.speechSynthesis;
+
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
@@ -52,6 +54,9 @@ function testSpeech() {
     var speechResult = event.results[0][0].transcript.toLowerCase();
     diagnosticPara.textContent = 'Speech received: ' + speechResult + '.';
     if(speechResult === phrase) {
+      const utterThis = new SpeechSynthesisUtterance(phrase);/////
+      synth.speak(utterThis);/////
+      
       resultPara.textContent = 'I heard the correct phrase!';
       resultPara.style.background = 'lime';
     } else {
