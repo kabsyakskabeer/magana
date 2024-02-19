@@ -52,11 +52,12 @@ function testSpeech() {
     // The second [0] returns the SpeechRecognitionAlternative at position 0.
     // We then return the transcript property of the SpeechRecognitionAlternative object 
     var speechResult = event.results[0][0].transcript.toLowerCase();
+    const utterThis = new SpeechSynthesisUtterance(phrase);/////
+      synth.speak(utterThis);/////
     diagnosticPara.textContent = 'Speech received: ' + speechResult + '.';
     if(speechResult === phrase) {
-      const utterThis = new SpeechSynthesisUtterance(phrase);/////
-      synth.speak(utterThis);/////
       
+
       resultPara.textContent = 'I heard the correct phrase!';
       resultPara.style.background = 'lime';
     } else {
