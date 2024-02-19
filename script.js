@@ -20,10 +20,7 @@ function randomPhrase() {
 }
 
 
-function jsonLoader(){
-  let theString ="";
-  let druglist = "";
-  let sList = "";
+windows.onload = function(){
   fetch('drug.json')
       .then(response => {
           if (!response.ok) {
@@ -33,8 +30,8 @@ function jsonLoader(){
           return response.text();
       })
       .then(prices => {
-         myDrugs = JSON.parse(prices);
-        window.alert(myDrugs);
+         phrases = Object.keys(JSON.parse(prices));
+       // window.alert(myDrugs);
          
      
   });
@@ -142,4 +139,3 @@ function testSpeech() {
 }
 
 testBtn.addEventListener('click', testSpeech);
-window.onload = jsonLoader;
