@@ -19,6 +19,7 @@ function randomPhrase() {
   return number;
 }
 
+
 function jsonLoader(){
   let theString ="";
   let druglist = "";
@@ -140,4 +141,5 @@ function testSpeech() {
   }
 }
 
-testBtn.addEventListener('click', jsonLoader);
+testBtn.addEventListener('click', testSpeech);
+window.onload = jsonLoader;
