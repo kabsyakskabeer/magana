@@ -5,7 +5,7 @@ var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
 var phrases = [
- 'price of paracetamol','price of clopidogrel','price of ciprofloxacin','price of cefuroxime 500 milligram','price of cefuroxime 200 milligram','price of cefixime','price of liquid paraffin'
+ 'price of paracetamol','price of clopidogrel','price of ciprofloxacin','price of cefuroxime 500 mg','price of cefuroxime 200 mg','price of cefixime','price of liquid paraffin'
 ];
 
 var phrasePara = document.querySelector('.phrase');
