@@ -19,6 +19,26 @@ function randomPhrase() {
   return number;
 }
 
+function jsonLoader(){
+  let theString ="";
+  let druglist = "";
+  let sList = "";
+  fetch('drug.json')
+      .then(response => {
+          if (!response.ok) {
+              throw new Error("HTTP error " + response.status);
+          }
+          
+          return response.text();
+      })
+      .then(prices => {
+         myDrugs = JSON.parse(prices);
+        window.alert(myDrugs);
+         
+     
+  });
+}
+
 function testSpeech() {
   testBtn.disabled = true;
   testBtn.textContent = 'Test in progress';
@@ -120,4 +140,4 @@ function testSpeech() {
   }
 }
 
-testBtn.addEventListener('click', testSpeech);
+testBtn.addEventListener('click', jsonLoader);
