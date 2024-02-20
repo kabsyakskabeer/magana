@@ -9,6 +9,7 @@
     <button id="mybutton">press</button>
     <script>
         let button = document.getElementById('mybutton');
+        let phrases = "";
         button.addEventListener('click',myPhrase);
      function myPhrase(){
         fetch('drug.json')
