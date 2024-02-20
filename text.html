@@ -9,10 +9,23 @@
     <button id="mybutton">press</button>
     <script>
         let button = document.getElementById('mybutton');
-        button.addEventListener('click', function(){
-            console.log('press');
-            window.alert('button press');
-        });
+        button.addEventListener('click',myPhrase);
+     function myPhrase(){
+        fetch('drug.json')
+      .then(response => {
+          if (!response.ok) {
+              throw new Error("HTTP error " + response.status);
+          }
+          
+          return response.text();
+      })
+      .then(prices => {
+         phrases = Object.keys(JSON.parse(prices));
+       window.alert(phrases);
+         
+     
+  });
+}
     </script>
 </body>
 </html>

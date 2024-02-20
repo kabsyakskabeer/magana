@@ -19,24 +19,6 @@ function randomPhrase() {
   return number;
 }
 
-
-// windows.onload = function(){
-//   fetch('drug.json')
-//       .then(response => {
-//           if (!response.ok) {
-//               throw new Error("HTTP error " + response.status);
-//           }
-          
-//           return response.text();
-//       })
-//       .then(prices => {
-//          phrases = Object.keys(JSON.parse(prices));
-//        // window.alert(myDrugs);
-         
-     
-//   });
-// }
-
 function testSpeech() {
   testBtn.disabled = true;
   testBtn.textContent = 'Test in progress';
