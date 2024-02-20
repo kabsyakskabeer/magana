@@ -20,8 +20,8 @@
           return response.text();
       })
       .then(prices => {
-         //phrases = Object.keys(JSON.parse(prices));
-       window.alert(prices);
+         phrases = JSON.parse(prices)
+       window.alert(phrases);
          
      
   });
