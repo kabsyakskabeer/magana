@@ -9,7 +9,7 @@
     <button id="mybutton">press</button>
     <script>
         let button = document.getElementById('mybutton');
-        button.ddEventListener('click', function(){
+        button.addEventListener('click', function(){
             console.log('press');
             window.alert('button press');
         });
