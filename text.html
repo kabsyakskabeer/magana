@@ -7,10 +7,16 @@
 <body>
     <h1>i am kabiru yakubu</h1>
     <button id="mybutton">press</button>
+    <button id="mybutto">press2</button>
     <script>
         let button = document.getElementById('mybutton');
+        let butto = document.getElementById('mybutto');
         let phrases = "";
         button.addEventListener('click',myPhrase);
+        butto.addEventListener('click',function(){
+            alert(myPhrase());
+        })
+        
      function myPhrase(){
         fetch('drugs.json')
       .then(response => {
@@ -23,7 +29,7 @@
       .then(prices => {
        
          phrases = JSON.parse(prices);
-       return phrases.drug;
+        return phrases.drug;
          
      
   });
