@@ -4,7 +4,7 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
-var phrases = myPhrase;
+var phrases = myPhrase();
 //  [
 //  'price of paracetamol','price of clopidogrel','price of ciprofloxacin','price of cefuroxime 500 mg','price of cefuroxime 200 mg','price of cefixime','price of liquid paraffin'
 // ];
