@@ -4,6 +4,24 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
+function myPhrase(){
+  let ph = [];
+  fetch('drugs.json')
+.then(response => {
+    if (!response.ok) {
+       //throw throw new Error("HTTP error " + response.status);
+    }
+    
+    return response.text();
+})
+.then(prices => {
+ 
+   ph = JSON.parse(prices);
+  return ph.drug;
+
+})
+}
+
 var phrases = myPhrase();
 
 //window.addEventListener('load',myPhrase)
@@ -123,20 +141,3 @@ function testSpeech() {
 
 testBtn.addEventListener('click', testSpeech);
 
-function myPhrase(){
-  let ph = [];
-  fetch('drugs.json')
-.then(response => {
-    if (!response.ok) {
-       //throw throw new Error("HTTP error " + response.status);
-    }
-    
-    return response.text();
-})
-.then(prices => {
- 
-   ph = JSON.parse(prices);
-  return ph.drug;
-
-})
-}
