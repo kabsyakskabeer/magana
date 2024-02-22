@@ -20,7 +20,7 @@ function randomPhrase() {
 }
 
 function testSpeech() {
-  alert(myPhrase);
+  alert(phrases);
   testBtn.disabled = true;
   testBtn.textContent = 'Test in progress';
 
