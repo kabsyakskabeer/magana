@@ -4,10 +4,9 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
-var phrases = [
- 'price of paracetamol','price of clopidogrel','price of ciprofloxacin','price of cefuroxime 500 mg','price of cefuroxime 200 mg','price of cefixime','price of liquid paraffin'
-];
-window.addEventListener('load',myPhrase)
+var phrases = myPhrase;
+
+//window.addEventListener('load',myPhrase)
 
 var phrasePara = document.querySelector('.phrase');
 var resultPara = document.querySelector('.result');
@@ -24,7 +23,7 @@ function testSpeech() {
   testBtn.disabled = true;
   testBtn.textContent = 'Test in progress';
 
-  var phrase = phrases[randomPhrase()];
+  var phrase = phrases[0];
   // To ensure case consistency while checking with the returned output text
   phrase = phrase.toLowerCase();
   phrasePara.textContent = phrase;
@@ -136,7 +135,7 @@ function myPhrase(){
 .then(prices => {
  
    ph = JSON.parse(prices);
-  phrases = ph.drug;
+  return ph.drug;
 
 })
 }
