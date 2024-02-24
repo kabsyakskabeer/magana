@@ -41,11 +41,11 @@ function randomPhrase() {
 }
 
 function testSpeech() {
- // alert(phrases);
+  alert(phrases);
   testBtn.disabled = true;
   testBtn.textContent = 'Test in progress';
 
-  var phrase = randomPhrase()
+ var phrase = phrases[randomPhrase()];
   // To ensure case consistency while checking with the returned output text
   phrase = phrase.toLowerCase();
   phrasePara.textContent = phrase;
