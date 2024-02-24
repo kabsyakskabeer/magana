@@ -3,6 +3,9 @@ const synth = window.speechSynthesis;
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
+var phrases = "";
+
+window.addEventListener('load',myPhrase);
 
 function myPhrase(){
   let ph = [];
@@ -33,7 +36,7 @@ var diagnosticPara = document.querySelector('.output');
 var testBtn = document.querySelector('button');
 
 function randomPhrase() {
-  var number = Math.floor(Math.random() * myPhrase().length);
+  var number = Math.floor(Math.random() * phrases.length);
   return number;
 }
 
@@ -42,7 +45,7 @@ function testSpeech() {
   testBtn.disabled = true;
   testBtn.textContent = 'Test in progress';
 
-  var phrase = myPhrase()[0];
+  var phrase = randomPhrase()
   // To ensure case consistency while checking with the returned output text
   phrase = phrase.toLowerCase();
   phrasePara.textContent = phrase;
@@ -50,7 +53,7 @@ function testSpeech() {
   resultPara.style.background = 'rgba(0,0,0,0.2)';
   diagnosticPara.textContent = '...diagnostic messages';
 
-  var grammar = '#JSGF V1.0; grammar phrase; public <phrase> = ' + myPhrase() +';';
+  var grammar = '#JSGF V1.0; grammar phrase; public <phrase> = ' + phrase +';';
   var recognition = new SpeechRecognition();
   var speechRecognitionList = new SpeechGrammarList();
   speechRecognitionList.addFromString(grammar, 1);
