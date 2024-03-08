@@ -8,34 +8,24 @@
     <h1>i am kabiru yakubu</h1>
     <button id="mybutton">press</button>
     <button id="mybutto">press2</button>
-    <script>
-        let button = document.getElementById('mybutton');
-        let butto = document.getElementById('mybutto');
-        let phrases = "";
-        button.addEventListener('click',myPhrase);
-        butto.addEventListener('click',function(){
-            //alert(myPhrase());
-            myPhrase();
-        })
-        
-     function myPhrase(){
-        fetch('drugs.json')
-      .then(response => {
-          if (!response.ok) {
-             //throw throw new Error("HTTP error " + response.status);
-          }
-          
-          return response.text();
-      })
-      .then(prices => {
-       
-         phrases = JSON.parse(prices);
-        alert(phrases.drug);
-      // return phrases.drug;
-         
-     
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/speechkitt.min.js"></script>
+<script>
+if (annyang) {
+  // Add our commands to annyang
+  annyang.addCommands({
+    'hello': function() { alert('Hello world!'); }
   });
+
+  // Tell KITT to use annyang
+  SpeechKITT.annyang();
+
+  // Define a stylesheet for KITT to use
+  SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/themes/flat.css');
+
+  // Render KITT's interface
+  SpeechKITT.vroom();
 }
-    </script>
+</script>
 </body>
 </html>
